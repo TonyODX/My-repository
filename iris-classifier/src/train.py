@@ -1,4 +1,5 @@
 from sklearn.datasets import load_iris
+import joblib
 iris = load_iris()
 X = iris.data
 y = iris.target 
@@ -11,6 +12,9 @@ from sklearn.tree import DecisionTreeClassifier
 model = DecisionTreeClassifier(random_state=42)
 
 model.fit(X_train, y_train)
+
+joblib.dump(model, "iris-classfier/decision_tree_model.joblib");
+loaded_model = joblib.load("decision_tree_model.joblib");
 
 y_pred = model.predict(X_test)
 
@@ -25,3 +29,4 @@ model = DecisionTreeClassifier(max_depth=3, random_state=42)
 model.fit(X_train, y_train)
 y_pred2 = model2.predict(X_test)
 print("k-NN accuracy:", accuracy_score(y_test, y_pred2))
+
