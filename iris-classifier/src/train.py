@@ -1,5 +1,6 @@
 from sklearn.datasets import load_iris
 import matplotlib.pyplot as plt
+from sklearn.metrics import accuracy_score, confusion_matrix, ConfusionMatrixDisplay
 import joblib
 iris = load_iris()
 X = iris.data
