@@ -13,7 +13,7 @@ model = DecisionTreeClassifier(random_state=42)
 
 model.fit(X_train, y_train)
 
-joblib.dump(model, "iris-classfier/decision_tree_model.joblib");
+joblib.dump(model, "iris-classifier/outputs/decision_tree_model.joblib");
 loaded_model = joblib.load("decision_tree_model.joblib");
 
 y_pred = model.predict(X_test)
