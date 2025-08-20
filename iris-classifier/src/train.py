@@ -1,4 +1,5 @@
 from sklearn.datasets import load_iris
+import matplotlib.pyplot as plt
 import joblib
 iris = load_iris()
 X = iris.data
@@ -30,3 +31,8 @@ model.fit(X_train, y_train)
 y_pred2 = model2.predict(X_test)
 print("k-NN accuracy:", accuracy_score(y_test, y_pred2))
 
+cm = confusion_matrix(y_test, y_pred);
+disp = ConfusionMatrixDisplay(confusion_matrix=cm, display_labels=iris.target_names)
+
+plt.savefig("iris-classifier/outputs/confusion_matrix.png")
+plt.close()
