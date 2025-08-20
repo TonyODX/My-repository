@@ -37,5 +37,6 @@ print("k-NN accuracy:", accuracy_score(y_test, y_pred2))
 cm = confusion_matrix(y_test, y_pred);
 disp = ConfusionMatrixDisplay(confusion_matrix=cm, display_labels=iris.target_names)
 
+disp.plot()
 plt.savefig("iris-classifier/outputs/confusion_matrix.png")
 plt.close()
